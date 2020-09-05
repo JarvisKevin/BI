@@ -1,0 +1,28 @@
+Thinking1：MVC框架指的是什么
+Answer：MVC框架中：M(Model)指的是与数据库相关的模型层，用于处理应用程序的数据逻辑；
+		              V(View)指的是视图，是应用程序中处理数据显示的部分；
+		              C(Controller)指的是控制器，是应用程序中处理用户交互的部分。
+	      MVC框架是一种软件设计的典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，
+	      将业务逻辑聚集到一个部件里面，再改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑 。
+	      这样的框架模式有助于管理复杂的应用程序，同时简化分组开发。
+
+Thinking2：基于Python的可视化技术都有哪些，你使用过哪些？
+Answer：基于python的可视化技术：Matplotlib, Seaborn, wordcloud, Pyecharts=Python+Echarts, Dash。
+	      最熟悉的莫过于Matplotlib和Seaborn。后者是前者的高级封装，具有更优美的可视化效果。
+	
+        常用图形的使用
+        import matplotlib.pyplot as plt；import seaborn as sns。
+        条形图：plt.bar(); sns.barplot()                                            
+        折线图：plt.plot(); sns.lineplot()
+        散点图：plt.scatter(); sns.jointplot()
+
+        heatmap的使用
+        举个例子，可视化特征之间的相关性时，我们可以利用DataFrame中的corr()函数得到特征
+        之间的相关系数，接着利用seaborn.heatmap(df.corr())，即可得到特征两两之间相关性的
+        热力图。
+
+        词云展示
+        from wordcloud import WordCloud
+        以英文为例，首先利用nltk.tokenize里的word_tokenize()将内容进行分词操作，接着将
+        WordCloud对象实例化成wc，利用wc.generate(分词后的内容)根据词频生成词云，再用
+        plt.imshow()进行可视化。
